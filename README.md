@@ -5,6 +5,7 @@ The setups steps expect following tools installed on the system.
 - Github
 - Ruby [3.3.5]
 - Rails [7.2.2]
+- Postgresql
 
 ##### 1. Check out the repository
 
