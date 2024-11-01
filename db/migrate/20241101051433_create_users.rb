@@ -12,6 +12,6 @@ class CreateUsers < ActiveRecord::Migration[7.2]
     end
     # Add indexes
     add_index :users, :email, unique: true
-    add_index :users, [:country_code, :phone_number], unique: true
+    add_index :users, %i[country_code phone_number], unique: true
   end
 end

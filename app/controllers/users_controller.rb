@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to users_path, notice: 'User was successfully created.'
+      redirect_to users_path, notice: "User was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to users_path, notice: 'User was successfully updated.'
+      redirect_to users_path, notice: "User was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to users_path, notice: 'User was successfully deleted.'
+    redirect_to users_path, notice: "User was successfully deleted."
   end
 
   private
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find_by(id: params[:id])
     unless @user
-      redirect_to users_path, notice: 'User not found.'
+      redirect_to users_path, notice: "User not found."
     end
   end
 
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 
   def load_country_code
     @genders = User.genders.keys
-    data = YAML.load_file(Rails.root.join('db', 'countries.yml'))
-    @countries_code = data['countries'].values
+    data = YAML.load_file(Rails.root.join("db", "countries.yml"))
+    @countries_code = data["countries"].values
   end
 end
